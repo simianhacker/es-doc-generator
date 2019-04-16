@@ -43,11 +43,12 @@ let i = 1;
 const send = async (C, T, client, index) => {
   while (true) {
     console.log(`Sending document set ${i}`);
-    const docs = T.fill(C.getCurrent());
+    const variables = C.getCurrent();
+    const docs = T.fill(variables);
     docs.forEach(doc => {
       client.index({
-        index: index,
-        type: 'doc',
+        index: T.format(variables, 'INDEX_DATE', index),
+        type: '_doc',
         body: doc
       }, function(err, resp, status) {
         if (err) {

@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/skh/es-doc-generator#readme",
   "dependencies": {
+    "@elastic/datemath": "^5.0.2",
     "elasticsearch": "^15.4.1",
     "moment": "^2.24.0"
   }

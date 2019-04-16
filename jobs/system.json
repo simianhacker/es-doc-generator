@@ -1,11 +1,11 @@
 {
-  "index": "metricbeat-6.7.0-2019.02.25",
+  "index": "metricbeat-6.7.0-##INDEX_DATE##",
   "variables": {
     "TIMESTAMP": {
       "type": "timestamp",
       "params": {
-        "start": "2019-02-25T15:01:00.652Z",
-        "end": "2019-02-25T15:59:00.652Z",
+        "start": "now-1h",
+        "end": "now",
         "interval": "10"
       }
     },
@@ -13,7 +13,16 @@
       "type": "counter",
       "params": {
         "start": 1,
-        "end": 5 
+        "end": 5
+      }
+    },
+    "INDEX_DATE": {
+      "type": "timestamp",
+      "params": {
+        "start": "now-1h",
+        "end": "now",
+        "interval": "10",
+        "format": "YYYY.MM.DD"
       }
     }
   },
